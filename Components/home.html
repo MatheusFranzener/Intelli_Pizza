@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -25,7 +25,7 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <span class="textoIntelli">Intelli Pizzaria</span>
-                    <img class="logoIntelli" src="../Images/pizza (1).png" alt="logoIntelli">
+                    <img class="logoIntelli" src="../Images/logoPizza.png" alt="logoIntelli">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -33,13 +33,19 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                Pizzas
+                                <a href="#divCombos">
+                                    Combos
+                                </a>
                             </li>
                             <li class="nav-item">
-                                Combos
+                                <a href="#divPizzas">
+                                    Pizzas
+                                </a>
                             </li>
                             <li class="nav-item">
-                                Bebidas
+                                <a href="#divBebidas">
+                                    Bebidas
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -47,38 +53,118 @@
             </nav>
         </div>
 
-        <div class="containerCarrosel">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../Images/pizzaboa.jpg" class="d-block" alt="img1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../Images/pizza2.jpg" class="d-block" alt="img1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../Images/doce.jpg" class="d-block" alt="img1">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+        <div id="divCombos">
+            <div class="faixa">
+                Combos
             </div>
+            <div class="divImgs">
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/pizzaMussarela.jpg" class="card-img-top" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">1 Grande + 1 Pequena doce</h5>
+                        <p class="card-text">1 pizza grande sabor mussarela + 1 pizza pequena sabor brigadeiro</p>
+                        <a href="" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/pizzaFrangoCatupiry.webp" class="card-img-top" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">1 Média + 1 Refri 600ml</h5>
+                        <p class="card-text">1 pizza média sabor Frango & Catupiry + 1 Coca-Cola 600ml</p>
+                        <a href="" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/pizzaCalabresa.webp" class="card-img-top" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">2 Grandes + 1 Refri 2L</h5>
+                        <p class="card-text">2 pizzas grandes sabor calabresa e portuguesa + 1 Guaraná 2L</p>
+                        <a href="" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/pizzaMarguerita.png" class="card-img-top" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">1 Grande + 1 Média</h5>
+                        <p class="card-text">1 pizza grande sabor marguerita + 1 pizza média sabor quatro queijos</p>
+                        <a href="" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="divPizzas">
+            <div class="faixa">
+                Pizzas
+            </div>
+            <div class="divImgs">
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/pizzaGrande.jpg" class="card-img-top" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">Pizza Grande</h5>
+                        <p class="card-text">Até 4 Sabores - 12 Fatias</p>
+                        <a href="" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/pizzaMedia.jpg" class="card-img-top" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">Pizza Média</h5>
+                        <p class="card-text">Até 3 Sabores - 9 Fatias</p>
+                        <a href="" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/pizzaPequena.webp" class="card-img-top" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">Pizza Pequena</h5>
+                        <p class="card-text">Até 2 Sabores - 6 Fatias</p>
+                        <a href="" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/pizzaBroto.jpg" class="card-img-top" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">Pizza Broto</h5>
+                        <p class="card-text">1 Sabor - 4 Fatias</p>
+                        <a href="" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+        </div>
+        
+        <div id="divBebidas">
+            <div class="faixa">
+                Bebidas
+            </div>
+            <div class="divImgs">
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/fanta.jpg" class="card-img-top imgBebidas" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">Fanta</h5>
+                        <p class="card-text">350ml, 600ml, 1L e 2L</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/cocaCola.jpg" class="card-img-top imgBebidas" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">Coca-Cola</h5>
+                        <p class="card-text">350ml, 600ml, 1L e 2L</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/guarana.jpg" class="card-img-top imgBebidas" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">Guaraná Antarctica</h5>
+                        <p class="card-text">350ml, 600ml, 1L e 2L</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="../Images/sprite.jpg" class="card-img-top imgBebidas" alt="Pizza Doce">
+                    <div class="card-body">
+                        <h5 class="card-title">Sprite</h5>
+                        <p class="card-text">350ml, 600ml, 1L e 2L</p>
+                    </div>
+                </div>
         </div>
 
     </div>
