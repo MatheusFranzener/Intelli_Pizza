@@ -20,6 +20,17 @@ a{
     color: #FFFFFF !important;
 }
 
+hr{
+    padding: 0;
+    margin: 0;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 20px;
+    height: 16px;
+}
+
 .containerPrincipal{
     width: 100%;
     height: 100%;
@@ -46,3 +57,45 @@ a{
     margin: 0 auto;
     cursor: pointer;
 }
+
+.containerTipoBorda{
+    width: 100%;
+}
+
+.borda1{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin-top: 15px;
+    border-bottom: solid 1px rgb(172, 168, 168);
+}
+
+.borda1:hover{
+    background-color: rgb(245, 245, 245);
+}
+
+.textoBorda{
+    margin-left: 5px;
+    font-size: 18px;
+}
+
+.nomePizza{
+    font-size: 20px;
+}
+
+.descricaoPizza{
+    font-size: 14px;
+}
+
+.precoPizza{
+    font-size: 20px;
+    color: #B30000;
+}
+
+.divBotoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
