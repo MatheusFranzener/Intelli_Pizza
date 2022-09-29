@@ -85,3 +85,22 @@ a{
     object-fit: contain;
     height: 200px;
 }
+
+.botaoComprar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    font-size: 18px;
+    color: #11472C !important;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);;
+    background-color: #FFBF00;
+    border-radius: 5px;
+}
+
+.botaoComprar:hover {
+    color: #11472C !important;
+    border: solid 1px black;
+    border-radius: 5px;
+    background-color: white;
+}
