@@ -94,8 +94,33 @@ input[type=radio] {
 
 .divBotoes{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
 }
 
+.botao{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    border: red 2px solid;
+    color: red;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.botao:disabled {
+    background-color: rgb(224, 224, 224);
+    border-color: rgb(165, 165, 165);
+    color: grey;
+}
+
+.botao:hover:enabled{
+    color: white;
+    background-color: red;
+}
+
+.botao h3{
+    margin: 0;
+}
