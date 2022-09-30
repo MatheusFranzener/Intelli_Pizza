@@ -116,14 +116,24 @@
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <div class="divSabores">
+                        <div class="qtdSabor">
+                            <span hidden="true" class="pointer">-</span>
+                            <span>0</span>
+                            <span class="pointer">+</span>
+                        </div>
                         <p class="nomePizza">Calabresa</p>
                         <p class="descricaoPizza">Mussarela, calabresa e orégano.</p>
                         <p class="precoPizza">+ R$ 8,00</p>
                     </div>
                     <hr>
                     <div class="divSabores">
-                        <p class="nomePizza">Calabresa</p>
-                        <p class="descricaoPizza">Mussarela, calabresa e orégano.</p>
+                        <div class="qtdSabor">
+                            <span hidden="true" class="pointer">-</span>
+                            <span>0</span>
+                            <span class="pointer">+</span>
+                        </div>
+                        <p class="nomePizza">Marguerita</p>
+                        <p class="descricaoPizza">Mussarela, tomate, manjericão e orégano.</p>
                         <p class="precoPizza">+ R$ 8,00</p>
                     </div>
                     <hr>
@@ -141,21 +151,60 @@
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     <div class="containerBebida">
-                        <h4>Selecione bebida: </h4>
-                        <div class="borda1">
-                            <input type="radio" name="borda" id="borda">
-                            <span class="textoBorda">Coca-Cola 350ml</span>
+                        <h4>Selecione a bebida: </h4>
+                        <div class="bebida1">
+                            <input type="radio" id="bebida">
+                            <span class="textoBebida">Coca-Cola 350ml</span>
                         </div>
 
-                        <div class="borda1">
-                            <input type="radio" name="borda" id="borda">
-                            <span class="textoBorda">Coca-Cola 350ml</span>
+                        <div class="bebida1">
+                            <input type="radio" id="bebida">
+                            <span class="textoBebida">Coca-Cola 350ml</span>
                         </div>
 
-                        <div class="borda1">
-                            <input type="radio" name="borda" id="borda">
-                            <span class="textoBorda">Coca-Cola 350ml</span>
+                        <div class="bebida1">
+                            <input type="radio" id="bebida">
+                            <span class="textoBebida">Coca-Cola 350ml</span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <h2>Informações Pessoais</h2>
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="containerCliente">
+                        <h4>Suas informações: </h4>
+                        <form autocomplete="off" autocapitalize="on">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Nome Completo</label>
+                                <input class="form-control" type="text" placeholder="Ex: Matheus Franzener Hohmann">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">E-mail</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Ex: matheus@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputAddress1">Endereço</label>
+                                <input type="text" class="form-control" id="exampleInputAddress1"
+                                    placeholder="Ex: Bairro, Rua, Nº da Casa, Complemento">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputCellphone1">Telefone</label>
+                                <input type="text" maxlength="9" class="form-control" id="exampleInputCellphone1"
+                                    placeholder="Ex: 998765432"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                            </div>
+                            <a href="confirma.html" class="btn btn-primary">Fazer Pedido</a>
+                        </form>
                     </div>
                 </div>
             </div>

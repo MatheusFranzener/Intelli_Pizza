@@ -124,3 +124,18 @@ input[type=radio] {
 .botao h3{
     margin: 0;
 }
+
+.qtdSabor{
+    color: #B30000;
+    font-size: 30px;
+    margin: 40px 100px 0 0;
+    float: right;
+}
+
+.pointer:hover{
+    cursor: pointer;
+}
+
+.form-group{
+    margin: 15px 0;
+}
