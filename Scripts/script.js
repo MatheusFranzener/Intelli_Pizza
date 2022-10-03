@@ -1,23 +1,29 @@
-let numPedido = 0
+let numPedido = Number(localStorage.getItem("varPedido"))
 let listaPedidos = []
+let pedido
 
 function comprarPizza(tamanho) {
     numPedido++
 
-    listaPedidos.push({
+    if (tamanho < 4) {
+        document.getElementsByClassName("botao").setAttribute(hidden, "true")
+    }
+
+    pedido = {
         "número": numPedido,
         "tamanho": tamanho,
         "sabores": [],
+        "borda": "",
+        "bebida": "",
         "cliente": "",
         "endereço": "",
         "email": "",
         "telefone": "",
         "valor": 0
-    })
+    }
 
-    localStorage.setItem("listaPedidos", JSON.stringify(listaPedidos))
-
-    listaPedidos = JSON.parse(localStorage.getItem('listaPedidos'));
+    localStorage.setItem("varPedido", JSON.stringify(numPedido))
+    localStorage.setItem('pedido' + numPedido, JSON.stringify(pedido))
 }
 
 function comprarCombo1() {
@@ -27,6 +33,8 @@ function comprarCombo1() {
         "número": numPedido,
         "tamanho": 4,
         "sabores": "mussarela",
+        "borda": "",
+        "bebida": "",
         "cliente": "",
         "endereço": "",
         "email": "",
@@ -34,7 +42,8 @@ function comprarCombo1() {
         "valor": 60
     }
 
-    listaPedidos.push(pedido)
+    localStorage.setItem("varPedido", JSON.stringify(numPedido))
+    localStorage.setItem('pedido' + numPedido, JSON.stringify(pedido))
 
     numPedido++
 
@@ -42,6 +51,8 @@ function comprarCombo1() {
         "número": numPedido,
         "tamanho": 2,
         "sabores": "brigadeiro",
+        "borda": "",
+        "bebida": "",
         "cliente": "",
         "endereço": "",
         "email": "",
@@ -49,5 +60,29 @@ function comprarCombo1() {
         "valor": 30
     }
 
-    listaPedidos.push(pedido)
+    localStorage.setItem("varPedido", JSON.stringify(numPedido))
+    localStorage.setItem('pedido' + numPedido, JSON.stringify(pedido))
+}
+
+let sabores = []
+
+function fazerPedido() {
+
+    let saborBorda = document.querySelector('input[name=seguro]:checked').value
+
+}
+
+function addSabor(sabor, n, saborN) {
+    document.getElementsByClassName("pointer")[n].removeAttribute("hidden")
+    document.getElementsByClassName("pointer")[n+1].setAttribute("hidden", "hidden")
+    document.getElementById("sabor"+ saborN).textContent = "1"
+    sabores.push(sabor)
+}
+
+function rmvSabor(sabor, n, saborN) {
+    document.getElementsByClassName("pointer")[n].setAttribute("hidden", "hidden")
+    document.getElementsByClassName("pointer")[n+1].removeAttribute("hidden")
+    document.getElementById("sabor"+ saborN).textContent = "0"
+    let index = sabores.indexOf(sabor)
+    sabores.splice(index, index+1)
 }
