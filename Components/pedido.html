@@ -59,18 +59,18 @@
                     <div class="containerTipoBorda">
                         <h4>Selecione o tipo da borda: </h4>
                         <div class="borda1">
-                            <input type="radio" name="borda" id="borda">
-                            <span class="textoBorda">Sem Borda</span>
+                            <input type="radio" name="borda" id="borda" value="Sem Borda">
+                            <span class="textoBorda">Sem Borda - R$0,00</span>
                         </div>
 
                         <div class="borda1">
-                            <input type="radio" name="borda" id="borda">
-                            <span class="textoBorda">Borda de Catupiry</span>
+                            <input type="radio" name="borda" id="borda" value="Catupiry">
+                            <span class="textoBorda">Borda de Catupiry - R$2,00</span>
                         </div>
 
                         <div class="borda1">
-                            <input type="radio" name="borda" id="borda">
-                            <span class="textoBorda">Borda de Chocolate Preto</span>
+                            <input type="radio" name="borda" id="borda" value="Chocolate Preto">
+                            <span class="textoBorda">Borda de Chocolate Preto - R$3,00</span>
                         </div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                         </div>
                         <p class="nomePizza">Calabresa</p>
                         <p class="descricaoPizza">Mussarela, calabresa e orégano.</p>
-                        <p class="precoPizza">+ R$ 8,00</p>
+                        <p class="precoPizza">+ R$ 5,00</p>
                     </div>
                     <hr>
                     <div class="divSabores">
@@ -105,7 +105,40 @@
                         </div>
                         <p class="nomePizza">Marguerita</p>
                         <p class="descricaoPizza">Mussarela, tomate, manjericão e orégano.</p>
-                        <p class="precoPizza">+ R$ 8,00</p>
+                        <p class="precoPizza">+ R$ 5,00</p>
+                    </div>
+                    <hr>
+                    <div class="divSabores">
+                        <div class="qtdSabor">
+                            <span class="pointer" hidden="true" onclick="rmvSabor('Brócolis Especial', 4, 3)">-</span>
+                            <span id="sabor3">0</span>
+                            <span class="pointer" onclick="addSabor('Brócolis Especial', 4, 3)">+</span>
+                        </div>
+                        <p class="nomePizza">Brócolis Especial</p>
+                        <p class="descricaoPizza">Mussarela, brócolis, bacon, manjericão e orégano.</p>
+                        <p class="precoPizza">+ R$ 5,00</p>
+                    </div>
+                    <hr>
+                    <div class="divSabores">
+                        <div class="qtdSabor">
+                            <span class="pointer" hidden="true" onclick="rmvSabor('Portuguesa', 6, 4)">-</span>
+                            <span id="sabor4">0</span>
+                            <span class="pointer" onclick="addSabor('Portuguesa', 6, 4)">+</span>
+                        </div>
+                        <p class="nomePizza">Portuguesa</p>
+                        <p class="descricaoPizza">Mussarela, ovo, tomate, cebola, calabresa, bacon e orégano.</p>
+                        <p class="precoPizza">+ R$ 5,00</p>
+                    </div>
+                    <hr>
+                    <div class="divSabores">
+                        <div class="qtdSabor">
+                            <span class="pointer" hidden="true" onclick="rmvSabor('Chocolate Preto', 8, 5)">-</span>
+                            <span id="sabor5">0</span>
+                            <span class="pointer" onclick="addSabor('Chocolate Preto', 8, 5)">+</span>
+                        </div>
+                        <p class="nomePizza">Chocolate Preto</p>
+                        <p class="descricaoPizza">Mussarela e chocolate preto.</p>
+                        <p class="precoPizza">+ R$ 5,00</p>
                     </div>
                     <hr>
                 </div>
@@ -124,18 +157,23 @@
                     <div class="containerBebida">
                         <h4>Selecione a bebida: </h4>
                         <div class="bebida1">
-                            <input type="radio" id="bebida">
-                            <span class="textoBebida">Coca-Cola 350ml</span>
+                            <input type="radio" name="bebida" id="bebida" value="Coca-Cola">
+                            <span class="textoBebida">Coca-Cola 2L - R$8,00</span>
                         </div>
 
                         <div class="bebida1">
-                            <input type="radio" id="bebida">
-                            <span class="textoBebida">Coca-Cola 350ml</span>
+                            <input type="radio" name="bebida" id="bebida" value="Sprite">
+                            <span class="textoBebida">Sprite 1L - R$6,00</span>
                         </div>
 
                         <div class="bebida1">
-                            <input type="radio" id="bebida">
-                            <span class="textoBebida">Coca-Cola 350ml</span>
+                            <input type="radio" name="bebida" id="bebida" value="Guaraná">
+                            <span class="textoBebida">Guaraná 1,5L - R$7,00</span>
+                        </div>
+
+                        <div class="bebida1">
+                            <input type="radio" name="bebida" id="bebida" value="Fanta">
+                            <span class="textoBebida">Fanta 1,5L - R$7,00</span>
                         </div>
                     </div>
                 </div>
@@ -156,7 +194,8 @@
                         <form autocomplete="off" autocapitalize="on">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nome Completo</label>
-                                <input id="nomeCliente" class="form-control" type="text" placeholder="Ex: Matheus Franzener Hohmann">
+                                <input id="nomeCliente" class="form-control" type="text"
+                                    placeholder="Ex: Matheus Franzener Hohmann">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">E-mail</label>
@@ -174,7 +213,7 @@
                                     placeholder="Ex: 998765432"
                                     oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');">
                             </div>
-                            <a href="" class="btn btn-primary" onclick="fazerPedido()">Fazer Pedido</a>
+                            <a href="confirma.html" class="btn btn-primary" onclick="fazerPedido()">Fazer Pedido</a>
                         </form>
                     </div>
                 </div>

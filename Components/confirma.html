@@ -31,25 +31,6 @@
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a href="#divCombos">
-                                    Combos
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#divPizzas">
-                                    Pizzas
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#divBebidas">
-                                    Bebidas
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </nav>
         </div>
@@ -62,44 +43,107 @@
                     <div class="risco"></div>
                 </div>
                 <div class="dadosPedido">
-                    <span class="textoPedido">Tamanho: </span>
-                    <span class="textoPedido">Sabores: </span>
-                    <span class="textoPedido">Borda: </span>
-                    <span class="textoPedido">Bebida: </span>
+                    <span id="textoPedido1">Tamanho: </span>
+                    <span id="textoPedido2">Sabores: </span>
+                    <span id="textoPedido3">Borda: </span>
+                    <span id="textoPedido4">Bebida: </span>
                 </div>
                 <div class="containerTitulo">
                     <h3 class="h3">Dados Cliente: </h3>
                     <div class="risco"></div>
                 </div>
                 <div class="dadosPedido">
-                    <span class="textoPedido">Nome Completo: </span>
-                    <span class="textoPedido">Email: </span>
-                    <span class="textoPedido">Endereço: </span>
-                    <span class="textoPedido">Telefone: </span>
+                    <span id="textoPedido5">Nome Completo: </span>
+                    <span id="textoPedido6">Email: </span>
+                    <span id="textoPedido7">Endereço: </span>
+                    <span id="textoPedido8">Telefone: </span>
                 </div>
                 <div class="containerTitulo">
                     <h3 class="h3">Entrega: </h3>
                     <div class="risco"></div>
                 </div>
                 <div class="retirada">
-                    <input type="radio" name="entrega" id="entrega">
-                    <span class="textoBorda">Entrega (R$ 5,00)</span>
-                    <input type="radio" name="entrega" id="entrega">
-                    <span class="textoBorda">Retirada no balcão</span>
+                    <div>
+                        <input type="radio" name="entrega" id="entrega" onclick="entregar()">
+                        <span class="textoBorda">Entrega (R$ 5,00)</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="entrega" id="entrega" onclick="retirar()">
+                        <span class="textoBorda">Retirada no balcão</span>
+                    </div>
                 </div>
                 <div class="containerTitulo">
                     <h3 class="h3">Preço Total: </h3>
                     <div class="risco"></div>
                 </div>
                 <div class="preco">
-                    <span class="preco">R$ </span>
+                    <span id="preco">R$ </span>
                 </div>
                 <div class="botaoConfirma">
-                    <button class="botao">Confirmar Pedido</button>
+                    <button class="botao" onclick="redirecionar()">Confirmar Pedido</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        let tamanho = document.getElementById("textoPedido1")
+        let saboresTxt = document.getElementById("textoPedido2")
+        let borda = document.getElementById("textoPedido3")
+        let bebida = document.getElementById("textoPedido4")
+        let nome = document.getElementById("textoPedido5")
+        let email = document.getElementById("textoPedido6")
+        let endereco = document.getElementById("textoPedido7")
+        let telefone = document.getElementById("textoPedido8")
+        let preco = document.getElementById("preco")
+
+        var pedidoObj = JSON.parse(localStorage.getItem("pedido" + numPedido))
+
+        if (typeof pedidoObj.tamanho == "object") {
+            for (let i = 0; i < pedidoObj.tamanho.length; i++) {
+                switch (pedidoObj.tamanho[i]) {
+                    case 1:
+                        pedidoObj.tamanho[i] = "Broto"
+                        break;
+                    case 2:
+                        pedidoObj.tamanho[i] = "Pequena"
+                        break;
+                    case 3:
+                        pedidoObj.tamanho[i] = "Média"
+                        break;
+                    case 4:
+                        pedidoObj.tamanho[i] = "Grande"
+                        break;
+                }
+            }
+        } else {
+            switch (pedidoObj.tamanho) {
+                case 1:
+                    pedidoObj.tamanho = "Broto"
+                    break;
+                case 2:
+                    pedidoObj.tamanho = "Pequena"
+                    break;
+                case 3:
+                    pedidoObj.tamanho = "Média"
+                    break;
+                case 4:
+                    pedidoObj.tamanho = "Grande"
+                    break;
+            }
+        }
+
+
+        tamanho.appendChild(document.createTextNode(pedidoObj.tamanho))
+        saboresTxt.appendChild(document.createTextNode(pedidoObj.sabores))
+        borda.appendChild(document.createTextNode(pedidoObj.borda))
+        bebida.appendChild(document.createTextNode(pedidoObj.bebida))
+        nome.appendChild(document.createTextNode(pedidoObj.cliente))
+        email.appendChild(document.createTextNode(pedidoObj.email))
+        endereco.appendChild(document.createTextNode(pedidoObj.endereço))
+        telefone.appendChild(document.createTextNode(pedidoObj.telefone))
+        preco.appendChild(document.createTextNode(pedidoObj.valor))
+    </script>
 
 </body>
 
