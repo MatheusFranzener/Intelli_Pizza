@@ -1,5 +1,4 @@
 let numPedido = Number(localStorage.getItem("varPedido"))
-let listaPedidos = []
 let pedido
 
 function comprarPizza(tamanho) {
@@ -147,10 +146,10 @@ function fazerPedido() {
     }
 
     pedidoObj.borda = saborBorda
-    if(pedidoObj.sabores == []){
-        pedidoObj.sabores = sabores
-    }
-    if(pedidoObj.bebida == []){
+
+    pedidoObj.sabores = sabores
+
+    if (pedidoObj.bebida == []) {
         pedidoObj.bebida = bebida
     }
     pedidoObj.cliente = nomeCliente
@@ -205,27 +204,31 @@ function entregar() {
     var pedidoObj = JSON.parse(localStorage.getItem("pedido" + numPedido))
 
     extra = 5
-    
+
     let preco = document.getElementById("preco")
     preco.textContent = "R$" + (pedidoObj.valor + extra)
-    
+
     localStorage.setItem('pedido' + numPedido, JSON.stringify(pedidoObj))
 }
 
 function retirar() {
     var pedidoObj = JSON.parse(localStorage.getItem("pedido" + numPedido))
-    
+
     extra = 5
 
     let preco = document.getElementById("preco")
     preco.textContent = "R$" + pedidoObj.valor
-    
+
     localStorage.setItem('pedido' + numPedido, JSON.stringify(pedidoObj))
 }
 
-function redirecionar(){
-
+function redirecionar() {
     alert('Seu pedido foi confirmado')
     localStorage.clear()
-    window.location.href = "http://127.0.0.1:5500/Components/home.html"
+    window.location.href = "home.html"
+}
+
+function voltarHome(){
+    window.location.href = "home.html"
+    localStorage.clear()
 }
