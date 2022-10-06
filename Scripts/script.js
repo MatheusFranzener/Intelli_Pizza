@@ -129,6 +129,19 @@ function fazerPedido() {
 
     var pedidoObj = JSON.parse(localStorage.getItem("pedido" + numPedido))
 
+
+    pedidoObj.borda = saborBorda
+
+    pedidoObj.sabores = sabores
+
+    if (pedidoObj.bebida == []) {
+        pedidoObj.bebida = bebida
+    }
+    pedidoObj.cliente = nomeCliente
+    pedidoObj.email = emailCliente
+    pedidoObj.endereço = enderecoCliente
+    pedidoObj.telefone = telefoneCliente
+
     if (pedidoObj.borda == "Catupiry") {
         pedidoObj.valor += 2
     } else if (pedidoObj.borda == "Chocolate Preto") {
@@ -145,17 +158,7 @@ function fazerPedido() {
         pedidoObj.valor += 7
     }
 
-    pedidoObj.borda = saborBorda
-
-    pedidoObj.sabores = sabores
-
-    if (pedidoObj.bebida == []) {
-        pedidoObj.bebida = bebida
-    }
-    pedidoObj.cliente = nomeCliente
-    pedidoObj.email = emailCliente
-    pedidoObj.endereço = enderecoCliente
-    pedidoObj.telefone = telefoneCliente
+    pedidoObj.valor += valTotal;
 
     localStorage.setItem('pedido' + numPedido, JSON.stringify(pedidoObj))
 }
