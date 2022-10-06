@@ -43,7 +43,7 @@ function comprarCombo1() {
         "número": numPedido,
         "tamanho": [4, 2],
         "sabores": ["Marguerita", "Chocolate Preto"],
-        "borda": "",
+        "borda": "Catupiry",
         "bebida": "",
         "cliente": "",
         "endereço": "",
@@ -63,7 +63,7 @@ function comprarCombo2() {
         "número": numPedido,
         "tamanho": 3,
         "sabores": ["Brócolis Especial"],
-        "borda": "",
+        "borda": "Catupiry",
         "bebida": "Coca-Cola",
         "cliente": "",
         "endereço": "",
@@ -83,7 +83,7 @@ function comprarCombo3() {
         "número": numPedido,
         "tamanho": [4, 4],
         "sabores": ["Calabresa", "Portuguesa"],
-        "borda": "",
+        "borda": "Catupiry",
         "bebida": "Guaraná",
         "cliente": "",
         "endereço": "",
@@ -96,14 +96,14 @@ function comprarCombo3() {
     localStorage.setItem('pedido' + numPedido, JSON.stringify(pedido))
 }
 
-function comprarComb4() {
+function comprarCombo4() {
     numPedido++
 
     pedido = {
         "número": numPedido,
         "tamanho": [4, 3],
         "sabores": ["Marguerita", "Calabresa"],
-        "borda": "",
+        "borda": "Catupiry",
         "bebida": "",
         "cliente": "",
         "endereço": "",
