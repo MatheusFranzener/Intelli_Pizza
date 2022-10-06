@@ -104,3 +104,15 @@ a{
     border-radius: 5px;
     background-color: white;
 }
+
+.textoValor{
+    font-weight: 900;
+    opacity: 0.8;
+    font-size: 25px;
+    color: #B30000;
+}
+
+.textoValor:hover{
+    opacity: 1;
+    font-weight: 900;
+}
