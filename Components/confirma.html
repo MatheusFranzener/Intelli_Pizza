@@ -9,8 +9,6 @@
 
     <link rel="stylesheet" href="../Styles/confirma.css">
 
-    <script src="../Scripts/script.js"></script>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
@@ -25,8 +23,8 @@
         <div class="containerHeader">
             <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <span onclick="voltarHome()" class="textoIntelli">Intelli Pizzaria</span>
-                    <img onclick="voltarHome()" class="logoIntelli" src="../Images/logoPizza.png" alt="logoIntelli">
+                    <span onclick="limpar()" class="textoIntelli">Intelli Pizzaria</span>
+                    <img onclick="limpar()" class="logoIntelli" src="../Images/logoPizza.png" alt="logoIntelli">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -34,7 +32,7 @@
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a onclick="voltarHome()" href="home.html">
+                                <a onclick="limpar()" href="/">
                                     Home
                                 </a>
                             </li>
@@ -89,70 +87,13 @@
                     <span id="preco">R$ </span>
                 </div>
                 <div class="botaoConfirma">
-                    <button class="botao" onclick="redirecionar()">Confirmar Pedido</button>
+                    <button class="botao" onclick="alert('Seu pedido foi confirmado'); limpar()">Confirmar Pedido</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        let tamanho = document.getElementById("textoPedido1")
-        let saboresTxt = document.getElementById("textoPedido2")
-        let borda = document.getElementById("textoPedido3")
-        let bebida = document.getElementById("textoPedido4")
-        let nome = document.getElementById("textoPedido5")
-        let email = document.getElementById("textoPedido6")
-        let endereco = document.getElementById("textoPedido7")
-        let telefone = document.getElementById("textoPedido8")
-        let preco = document.getElementById("preco")
-
-        var pedidoObj = JSON.parse(localStorage.getItem("pedido" + numPedido))
-
-        if (typeof pedidoObj.tamanho == "object") {
-            for (let i = 0; i < pedidoObj.tamanho.length; i++) {
-                switch (pedidoObj.tamanho[i]) {
-                    case 1:
-                        pedidoObj.tamanho[i] = "Broto"
-                        break;
-                    case 2:
-                        pedidoObj.tamanho[i] = "Pequena"
-                        break;
-                    case 3:
-                        pedidoObj.tamanho[i] = "Média"
-                        break;
-                    case 4:
-                        pedidoObj.tamanho[i] = "Grande"
-                        break;
-                }
-            }
-        } else {
-            switch (pedidoObj.tamanho) {
-                case 1:
-                    pedidoObj.tamanho = "Broto"
-                    break;
-                case 2:
-                    pedidoObj.tamanho = "Pequena"
-                    break;
-                case 3:
-                    pedidoObj.tamanho = "Média"
-                    break;
-                case 4:
-                    pedidoObj.tamanho = "Grande"
-                    break;
-            }
-        }
-
-
-        tamanho.appendChild(document.createTextNode(pedidoObj.tamanho))
-        saboresTxt.appendChild(document.createTextNode(pedidoObj.sabores))
-        borda.appendChild(document.createTextNode(pedidoObj.borda))
-        bebida.appendChild(document.createTextNode(pedidoObj.bebida))
-        nome.appendChild(document.createTextNode(pedidoObj.cliente))
-        email.appendChild(document.createTextNode(pedidoObj.email))
-        endereco.appendChild(document.createTextNode(pedidoObj.endereço))
-        telefone.appendChild(document.createTextNode(pedidoObj.telefone))
-        preco.appendChild(document.createTextNode(pedidoObj.valor))
-    </script>
+    
+    <script src="../Scripts/confirma.js"></script>
 
 </body>
 
