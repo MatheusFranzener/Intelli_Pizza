@@ -1,14 +1,22 @@
 let numPedido = Number(localStorage.getItem("varPedido"))
 let pedido = {
-    "número": "",
+    "numero": "",
     "tamanho": "",
     "sabores": [],
     "borda": "",
     "bebida": "",
-    "cliente": "",
-    "endereço": "",
-    "email": "",
-    "telefone": "",
+    "nome": "",
+    "sobrenome": "",
+    "nascimento": "",
+    "cpf": "",
+    "cep": "",
+    "logradouro": "",
+    "num": "",
+    "complemento": "",
+    "bairro": "",
+    "localidade": "",
+    "uf": "",
+    "ret_ent": "",
     "valor": 0
 }
 

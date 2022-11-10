@@ -1,13 +1,23 @@
 let numPedido = Number(localStorage.getItem("varPedido"))
 
-let tamanho = document.getElementById("textoPedido1")
-let saboresTxt = document.getElementById("textoPedido2")
-let borda = document.getElementById("textoPedido3")
-let bebida = document.getElementById("textoPedido4")
-let nome = document.getElementById("textoPedido5")
-let email = document.getElementById("textoPedido6")
-let endereco = document.getElementById("textoPedido7")
-let telefone = document.getElementById("textoPedido8")
+let tamanho = document.getElementById("tamanho")
+let sabor1 = document.getElementById("sabor1")
+let sabor2 = document.getElementById("sabor2")
+let sabor3 = document.getElementById("sabor3")
+let sabor4 = document.getElementById("sabor4")
+let borda = document.getElementById("borda")
+let bebida = document.getElementById("bebida")
+let nome = document.getElementById("nome")
+let sobrenome = document.getElementById("sobrenome")
+let nascimento = document.getElementById("nascimento")
+let cpf = document.getElementById("cpf")
+let cep = document.getElementById("cep")
+let logradouro = document.getElementById("logradouro")
+let numero = document.getElementById("cep")
+let complemento = document.getElementById("complemento")
+let bairro = document.getElementById("bairro")
+let localidade = document.getElementById("localidade")
+let uf = document.getElementById("uf")
 let preco = document.getElementById("preco")
 
 var pedidoObj = JSON.parse(localStorage.getItem("pedido" + numPedido))
@@ -48,19 +58,31 @@ if (typeof pedidoObj.tamanho == "object") {
 
 
 tamanho.appendChild(document.createTextNode(pedidoObj.tamanho))
-saboresTxt.appendChild(document.createTextNode(pedidoObj.sabores))
+sabor1.appendChild(document.createTextNode(pedidoObj.sabores[0]))
+sabor2.appendChild(document.createTextNode(pedidoObj.sabores[1]))
+sabor3.appendChild(document.createTextNode(pedidoObj.sabores[2]))
+sabor4.appendChild(document.createTextNode(pedidoObj.sabores[3]))
 borda.appendChild(document.createTextNode(pedidoObj.borda))
 bebida.appendChild(document.createTextNode(pedidoObj.bebida))
-nome.appendChild(document.createTextNode(pedidoObj.cliente))
-email.appendChild(document.createTextNode(pedidoObj.email))
-endereco.appendChild(document.createTextNode(pedidoObj.endereço))
-telefone.appendChild(document.createTextNode(pedidoObj.telefone))
+nome.appendChild(document.createTextNode(pedidoObj.nome))
+sobrenome.appendChild(document.createTextNode(pedidoObj.sobrenome))
+nascimento.appendChild(document.createTextNode(pedidoObj.nascimento))
+cpf.appendChild(document.createTextNode(pedidoObj.cpf))
+cep.appendChild(document.createTextNode(pedidoObj.cep))
+logradouro.appendChild(document.createTextNode(pedidoObj.logradouro))
+numero.appendChild(document.createTextNode(pedidoObj.numero))
+complemento.appendChild(document.createTextNode(pedidoObj.complemento))
+bairro.appendChild(document.createTextNode(pedidoObj.bairro))
+localidade.appendChild(document.createTextNode(pedidoObj.localidade))
+uf.appendChild(document.createTextNode(pedidoObj.uf))
 preco.appendChild(document.createTextNode(pedidoObj.valor))
 
 let extra = 0
 
 function entregar() {
     var pedidoObj = JSON.parse(localStorage.getItem("pedido" + numPedido))
+    console.log(pedidoObj)
+    pedidoObj.ret_ent = "Entrega"
 
     extra = 5
 
@@ -72,6 +94,7 @@ function entregar() {
 
 function retirar() {
     var pedidoObj = JSON.parse(localStorage.getItem("pedido" + numPedido))
+    pedidoObj.ret_ent = "Retirada"
 
     extra = 5
 
@@ -81,7 +104,19 @@ function retirar() {
     localStorage.setItem('pedido' + numPedido, JSON.stringify(pedidoObj))
 }
 
-function limpar(){
-    localStorage.clear()
-    window.location.href = "/"
+function limpar() {
+    let req = JSON.parse(localStorage.getItem("pedido" + numPedido))
+    console.log('Objeto q vai ser mandado: ', req)
+    fetch("/confirma", {
+        method: "POST",
+        body: JSON.stringify(req),
+        headers: { "Content-Type": "application/json" }
+    })
+        .then(res => {
+            alert("Pedido realizado com sucesso!");
+            // localStorage.clear();
+            // window.location.href = "/";
+        });
+
 }
+

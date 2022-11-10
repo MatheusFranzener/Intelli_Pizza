@@ -44,26 +44,36 @@
 
         <div class="containerConfirma">
             <h1>Confirma Pedido</h1>
-            <div class="infoPedido">
+            <form class="infoPedido" action="/confirma" method="post">
                 <div class="containerTitulo">
                     <h3 class="h3">Dados Pizza: </h3>
                     <div class="risco"></div>
                 </div>
                 <div class="dadosPedido">
-                    <span id="textoPedido1">Tamanho: </span>
-                    <span id="textoPedido2">Sabores: </span>
-                    <span id="textoPedido3">Borda: </span>
-                    <span id="textoPedido4">Bebida: </span>
+                    <span id="tamanho">Tamanho: </span>
+                    <span id="sabor1">Sabor 1: </span>
+                    <span id="sabor2">Sabor 2: </span>
+                    <span id="sabor3">Sabor 3: </span>
+                    <span id="sabor4">Sabor 4: </span>
+                    <span id="borda">Borda: </span>
+                    <span id="bebida">Bebida: </span>
                 </div>
                 <div class="containerTitulo">
                     <h3 class="h3">Dados Cliente: </h3>
                     <div class="risco"></div>
                 </div>
                 <div class="dadosPedido">
-                    <span id="textoPedido5">Nome Completo: </span>
-                    <span id="textoPedido6">Email: </span>
-                    <span id="textoPedido7">Endereço: </span>
-                    <span id="textoPedido8">Telefone: </span>
+                    <span id="nome">Nome: </span>
+                    <span id="sobrenome">Sobrenome: </span>
+                    <span id="nascimento">Nascimento: </span>
+                    <span id="cpf">CPF: </span>
+                    <span id="cep">Cep: </span>
+                    <span id="logradouro">Logradouro: </span>
+                    <span id="numero">Número: </span>
+                    <span id="complemento">Complemento: </span>
+                    <span id="bairro">Bairro: </span>
+                    <span id="localidade">Cidade: </span>
+                    <span id="uf">Estado: </span>
                 </div>
                 <div class="containerTitulo">
                     <h3 class="h3">Entrega: </h3>
@@ -71,13 +81,14 @@
                 </div>
                 <div class="retirada">
                     <div>
-                        <input type="radio" name="entrega" id="entrega" onclick="entregar()">
+                        <input type="radio" name="entrega" id="entrega" onclick="entregar()" value="Teste1">
                         <span class="textoBorda">Entrega (R$ 5,00)</span>
                     </div>
                     <div>
-                        <input type="radio" name="entrega" id="entrega" onclick="retirar()">
+                        <input type="radio" name="entrega" id="entrega" onclick="retirar()" value="Retirada">
                         <span class="textoBorda">Retirada no balcão</span>
                     </div>
+                    <span hidden id="ret_ent" value=""></span>
                 </div>
                 <div class="containerTitulo">
                     <h3 class="h3">Preço Total: </h3>
@@ -87,9 +98,9 @@
                     <span id="preco">R$ </span>
                 </div>
                 <div class="botaoConfirma">
-                    <button class="botao" onclick="alert('Seu pedido foi confirmado'); limpar()">Confirmar Pedido</button>
+                    <button class="botao" onclick="limpar()">Confirmar Pedido</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
     
