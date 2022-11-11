@@ -44,7 +44,7 @@
 
         <div class="containerConfirma">
             <h1>Confirma Pedido</h1>
-            <form class="infoPedido" action="/confirma" method="post">
+            <div class="infoPedido">
                 <div class="containerTitulo">
                     <h3 class="h3">Dados Pizza: </h3>
                     <div class="risco"></div>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="retirada">
                     <div>
-                        <input type="radio" name="entrega" id="entrega" onclick="entregar()" value="Teste1">
+                        <input type="radio" name="entrega" id="entrega" onclick="entregar()" value="Entrega">
                         <span class="textoBorda">Entrega (R$ 5,00)</span>
                     </div>
                     <div>
@@ -98,9 +98,9 @@
                     <span id="preco">R$ </span>
                 </div>
                 <div class="botaoConfirma">
-                    <button class="botao" onclick="limpar()">Confirmar Pedido</button>
+                    <button class="botao" onclick="confirmar()">Confirmar Pedido</button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
     

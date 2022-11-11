@@ -104,19 +104,22 @@ function retirar() {
     localStorage.setItem('pedido' + numPedido, JSON.stringify(pedidoObj))
 }
 
-function limpar() {
+function confirmar() {
     let req = JSON.parse(localStorage.getItem("pedido" + numPedido))
     console.log('Objeto q vai ser mandado: ', req)
-    fetch("/confirma", {
+    fetch('/confirma', {
         method: "POST",
         body: JSON.stringify(req),
         headers: { "Content-Type": "application/json" }
     })
-        .then(res => {
-            alert("Pedido realizado com sucesso!");
-            // localStorage.clear();
-            // window.location.href = "/";
-        });
-
+    .then(res => {
+        localStorage.clear();
+        window.href.location = '/';
+    })
+    .catch(error => console.log('Deu Erro:' + error));
 }
 
+function limpar() {
+    localStorage.clear();
+    window.location.href = "/";
+}

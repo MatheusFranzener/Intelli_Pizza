@@ -107,7 +107,7 @@ const endereco = (dados) =>{
 }
 
 cep.addEventListener('blur', ()=>{
-    let search = cep.value.replace("-","");
+    let search = cep.value;
 
     fetch(`https://viacep.com.br/ws/${search}/json/`,{
         method: 'GET',

@@ -1,12 +1,11 @@
 const express = require ('express') 
 const bodyParser = require('body-parser')
 const mysql = require('mysql2')
-const app = express ()
+const app = express()
 let contador = 0;
 
 const timeElapsed = Date.now();
-const data = new Date(timeElapsed);
-const hoje = data.toISOString;
+const hoje = new Date(timeElapsed);
 
 const port = process.env.PORT || 8081
 
@@ -43,14 +42,13 @@ app.post('/pedido', (req, res)=>{
 })
 
 app.post('/confirma',(req, res)=>{
-    console.log('Esse é o req.body:', req.body)
-    // contador++;
-    // sql.query('insert into cliente (?,?,?,?)', [req.body.cpf, req.body.nome, req.body.sobrenome, req.body.nascimento])
-    // sql.query('insert into endereco (?,?,?,?,?,?,?)', [req.body.cep, req.body.logradouro, req.body.num, req.body.complemento, req.body.bairro, , req.body.localidade, req.body.uf])
-    // sql.query('insert into adicional (?,?,?)', [, req.body.bebida, req.body.borda])
-    // sql.query('insert into pizza (?,?,?,?,?,?,?)', [, req.body.tamanho, req.body.sabor1, req.body.sabor2, req.body.sabor3, req.body.sabor4, contador])
-    // sql.query('insert into pedido (?,?,?,?,?,?)', [, req.body.preco, req.body.ret_ent, hoje, req.body.cpf, contador])
-    // res.redirect('/');
+    contador++;
+    sql.query('insert into cliente values(?,?,?,?)', [req.body.cpf, req.body.nome, req.body.sobrenome, req.body.nascimento])
+    sql.query('insert into endereco values(?,?,?,?,?,?,?)', [req.body.cep, req.body.logradouro, req.body.num, req.body.complemento, req.body.bairro, req.body.localidade, req.body.uf])
+    sql.query('insert into adicional values(?,?,?)', [, req.body.bebida, req.body.borda])
+    sql.query('insert into pizza values(?,?,?,?,?,?,?)', [, req.body.tamanho, req.body.sabores[0], req.body.sabores[1], req.body.sabores[2], req.body.sabores[3], contador])
+    sql.query('insert into pedido values(?,?,?,?,?,?)', [, req.body.valor, req.body.ret_ent, hoje, req.body.cpf, contador])
+    res.redirect('/');
 })
 
 app.listen(port,() =>{
